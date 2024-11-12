@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Movies & Series</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #1c1c1c;
+      color: #ffffff;
+      text-align: center;
+    }
+    h1 {
+      color: #ffcc00;
+      margin: 20px 0;
+    }
+    h2 {
+      color: #ffcc00;
+      margin: 15px 0;
+    }
+    .category-section {
+      margin: 30px 0;
+    }
+    .movie-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .movie-card {
+      width: 180px;
+      background-color: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+    .movie-cover {
+      width: 100%;
+      height: 270px;
+      background-size: cover;
+      background-position: center;
+    }
+    .movie-title {
+      padding: 10px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+    /* Overlay style */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .overlay-content {
+      max-width: 300px;
+      text-align: center;
+    }
+    .overlay-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #333;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .overlay-button:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Discover Movies & Series</h1>
+
+<div class="category-section">
+  <h2>Action & Adventure</h2>
+  <div class="movie-grid">
+    <div class="movie-card" onclick="showOverlay('Edge of Nowhere')">
+      <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_action_mo.png');"></div>
+      <div class="movie-title">Edge of Nowhere</div>
+    </div>
+    <div class="movie-card" onclick="showOverlay('Kingdom of Ember')">
+      <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_fantasy_m.png');"></div>
+      <div class="movie-title">Kingdom of Ember</div>
+    </div>
+  </div>
+</div>
+
+<div class="category-section">
+  <h2>Sci-Fi & Fantasy</h2>
+  <div class="movie-grid">
+    <div class="movie-card" onclick="showOverlay('Galactic Shadows')">
+      <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_sci-fi_mo.png');"></div>
+      <div class="movie-title">Galactic Shadows</div>
+    </div>
+  </div>
+</div>
+
+<div class="category-section">
+  <h2>Drama & Romance</h2>
+  <div class="movie-grid">
+    <div class="movie-card" onclick="showOverlay('Whispers in the Wind')">
+      <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_romantic_.png');"></div>
+      <div class="movie-title">Whispers in the Wind</div>
+    </div>
+  </div>
+</div>
+
+<div class="category-section">
+  <h2>Horror & Thriller</h2>
+  <div class="movie-grid">
+    <div class="movie-card" onclick="showOverlay('The Forgotten Forest')">
+      <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_horror_mo.png');"></div>
+      <div class="movie-title">The Forgotten Forest</div>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+    <p>To watch <span id="movieTitle"></span>, please download our media player.</p>
+    <button class="overlay-button" onclick="hideOverlay()">Download Player</button>
+  </div>
+</div>
+
+<script>
+  function showOverlay(title) {
+    document.getElementById('movieTitle').innerText = title;
+    document.getElementById('overlay').classList.add('active');
+  }
+  function hideOverlay() {
+    document.getElementById('overlay').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
