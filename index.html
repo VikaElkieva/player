@@ -53,6 +53,11 @@
       font-size: 1em;
       font-weight: bold;
     }
+    .movie-info {
+      padding: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
     /* Overlay style */
     .overlay {
       position: fixed;
@@ -94,20 +99,22 @@
     }
   </style>
 </head>
-<body>
+<body onclick="showOverlay('General offer for movies')">
 
 <h1>Discover Movies & Series</h1>
 
 <div class="category-section">
   <h2>Action & Adventure</h2>
   <div class="movie-grid">
-    <div class="movie-card" onclick="showOverlay('Edge of Nowhere')">
+    <div class="movie-card" onclick="showOverlay('Edge of Nowhere'); event.stopPropagation();">
       <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_action_mo.png');"></div>
       <div class="movie-title">Edge of Nowhere</div>
+      <div class="movie-info">Rating: 8.5/10<br>Description: An edge-of-your-seat thriller about survival.</div>
     </div>
-    <div class="movie-card" onclick="showOverlay('Kingdom of Ember')">
+    <div class="movie-card" onclick="showOverlay('Kingdom of Ember'); event.stopPropagation();">
       <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_fantasy_m.png');"></div>
       <div class="movie-title">Kingdom of Ember</div>
+      <div class="movie-info">Rating: 7.9/10<br>Description: A magical kingdom on the brink of war.</div>
     </div>
   </div>
 </div>
@@ -115,9 +122,10 @@
 <div class="category-section">
   <h2>Sci-Fi & Fantasy</h2>
   <div class="movie-grid">
-    <div class="movie-card" onclick="showOverlay('Galactic Shadows')">
+    <div class="movie-card" onclick="showOverlay('Galactic Shadows'); event.stopPropagation();">
       <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_sci-fi_mo.png');"></div>
       <div class="movie-title">Galactic Shadows</div>
+      <div class="movie-info">Rating: 9.1/10<br>Description: An intergalactic mission with unimaginable stakes.</div>
     </div>
   </div>
 </div>
@@ -125,9 +133,10 @@
 <div class="category-section">
   <h2>Drama & Romance</h2>
   <div class="movie-grid">
-    <div class="movie-card" onclick="showOverlay('Whispers in the Wind')">
+    <div class="movie-card" onclick="showOverlay('Whispers in the Wind'); event.stopPropagation();">
       <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_romantic_.png');"></div>
       <div class="movie-title">Whispers in the Wind</div>
+      <div class="movie-info">Rating: 8.0/10<br>Description: A timeless romance, whispered by the wind.</div>
     </div>
   </div>
 </div>
@@ -135,9 +144,10 @@
 <div class="category-section">
   <h2>Horror & Thriller</h2>
   <div class="movie-grid">
-    <div class="movie-card" onclick="showOverlay('The Forgotten Forest')">
+    <div class="movie-card" onclick="showOverlay('The Forgotten Forest'); event.stopPropagation();">
       <div class="movie-cover" style="background-image: url('A_realistic_movie_poster_for_a_fictional_horror_mo.png');"></div>
       <div class="movie-title">The Forgotten Forest</div>
+      <div class="movie-info">Rating: 7.5/10<br>Description: An eerie forest holds secrets best forgotten.</div>
     </div>
   </div>
 </div>
